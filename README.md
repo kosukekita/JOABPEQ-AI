@@ -1,1 +1,1 @@
-# Web application for JOABPEQ-AI using Streamlit
+# Web application for Automatic papaer-based JOABPEQ
