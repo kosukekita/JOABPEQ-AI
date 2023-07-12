@@ -6,6 +6,6 @@ Place epoch=155-val_loss=0.002.ckpt, epoch=72-val_loss=1.006.ckpt and main.py di
 
 Run the Streamlit_JOABPEQ.ipynb on Google Colabo.
 
-# 見た目
+# Appearance
 
 ![Streamlit](https://github.com/kosukekita/JOABPEQ-AI/assets/88062323/dea4e5d6-eb0f-41e8-bc76-c8d74817ae00)
