@@ -1,10 +1,10 @@
 # Web application for Automatic papaer-based JOABPEQ
 
-Google Colabo上でStreamlitを使用し、紙のJOABPEQ用紙から患者の回答を読み取るAIアプリケーションを作れます。
+You can use Streamlit on Google Colabo to create an Web application that reads patient responses from a paper JOABPEQ form.
 
-/contentディレクトリ直下に、epoch=155-val_loss=0.002.ckpt, epoch=72-val_loss=1.006.ckpt, main.pyを配置してください。
+Place epoch=155-val_loss=0.002.ckpt, epoch=72-val_loss=1.006.ckpt and main.py directly under /content directory.
 
-Streamlit_JOABPEQ.ipynbをGoogle Colabo上で実行してください。
+Run the Streamlit_JOABPEQ.ipynb on Google Colabo.
 
 # 見た目
 
