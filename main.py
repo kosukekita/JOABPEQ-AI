@@ -231,9 +231,9 @@ def main():
                         value = np.max(m(fc(feature)).detach().cpu().numpy().squeeze())
                         #tmp = f"The prediction label of {cols[i]} is {pred}. Prediction probability is {value}. Probability greater than 0.9996 is extremely reliable"
                         if value>=0.9996:
-                            tmp = f"{cols[i]} : {pred}"
+                            tmp = f"{cols[i]} : {pred}_{value}"
                         else:
-                            tmp = f"{cols[i]} : {pred}?"
+                            tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
                 elif int(exp)==2:
                     for i in range(14, 25):
@@ -243,9 +243,9 @@ def main():
                         value = np.max(m(fc(feature)).detach().cpu().numpy().squeeze())
                         #tmp = f"The prediction label of {cols[i]} is {pred}. Prediction probability is {value}. Probability greater than 0.9996 is extremely reliable"
                         if value>=0.9996:
-                            tmp = f"{cols[i]} : {pred}"
+                            tmp = f"{cols[i]} : {pred}_{value}"
                         else:
-                            tmp = f"{cols[i]} : {pred}?"
+                            tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
                 elif int(exp)==3:
                     feature = G.model(data)
