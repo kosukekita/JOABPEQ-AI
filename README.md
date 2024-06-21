@@ -6,6 +6,7 @@ Place "epoch=155-val_loss=0.002.ckpt", "epoch=72-val_loss=1.006.ckpt", and "main
 
 Run the Streamlit_JOABPEQ.ipynb on Google Colabo.
 
+Click the your url, and then paste External URL removing http:// and :8501
 # Appearance
 
 ![Streamlit](https://github.com/kosukekita/JOABPEQ-AI/assets/88062323/dea4e5d6-eb0f-41e8-bc76-c8d74817ae00)
