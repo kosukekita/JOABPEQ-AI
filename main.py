@@ -224,6 +224,7 @@ def main():
                 result = []
                 m = nn.Softmax(dim=1)
                 if int(exp)==1:
+                    result_dict = {}
                     for i in range(14):
                         feature = G.model(data)
                         fc = G.fc_labels[i]
@@ -235,7 +236,10 @@ def main():
                         else:
                             tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
+                        result_col[cols[i]] = pred; result_col[cols[i]+"_pred_prob"] = value
+                    df_result = pd.DataFrame(result_col)
                 elif int(exp)==2:
+                    result_dict = {}
                     for i in range(14, 25):
                         feature = G.model(data)
                         fc = G.fc_labels[i]
@@ -247,9 +251,12 @@ def main():
                         else:
                             tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
+                        result_col[cols[i]] = pred; result_col[cols[i]+"_pred_prob"] = value
+                    df_result = pd.DataFrame(result_col)
                 elif int(exp)==3:
                     feature = G.model(data)
                     result = G.fc_vas(feature).detach().cpu().numpy().squeeze()
+                    df_result = pd.DataFrame(result); df_result.columns = ["VAS_1", "VAS_2", "VAS_3"]
             # 元の画像に長方形と名前が書かれているので、それを表示
             #st.image(image, use_column_width=True)
 
@@ -276,7 +283,20 @@ def main():
                 else:
                     for i in range(0, 3):
                         st.write(f"VAS{i+1} is {result[i]}")            
-
+            @st.cache_data
+            def convert_df(df):
+               return df.to_csv(index=False).encode('utf-8')
+            
+            
+            csv = convert_df(df_result)
+            
+            st.download_button(
+               "Press to Download",
+               csv,
+               "file.csv",
+               "text/csv",
+               key='download-csv'
+            )
             # ここまで処理が終わったら分析が終わったことを示すメッセージを表示
             progress_message.write(f'Finish the inference!')
 
