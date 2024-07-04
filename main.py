@@ -13,6 +13,7 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import tempfile
 from pathlib import Path
+import pandas as pd
 #from azure.cognitiveservices.vision.face import FaceClient
 #from msrest.authentication import CognitiveServicesCredentials
 
