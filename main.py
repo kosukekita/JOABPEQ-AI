@@ -298,7 +298,7 @@ def main():
                "Press to Download",
                csv,
                "file.csv",
-               "text/csv",
+               #"text/csv",
                key='download-csv'
             )
             # ここまで処理が終わったら分析が終わったことを示すメッセージを表示
