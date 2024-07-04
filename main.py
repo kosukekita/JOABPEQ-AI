@@ -236,8 +236,8 @@ def main():
                         else:
                             tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
-                        result_col[cols[i]] = pred; result_col[cols[i]+"_pred_prob"] = value
-                    df_result = pd.DataFrame(result_col)
+                        result_dict[cols[i]] = pred; result_dict[cols[i]+"_pred_prob"] = value
+                    df_result = pd.DataFrame(result_dict)
                 elif int(exp)==2:
                     result_dict = {}
                     for i in range(14, 25):
@@ -251,8 +251,8 @@ def main():
                         else:
                             tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
-                        result_col[cols[i]] = pred; result_col[cols[i]+"_pred_prob"] = value
-                    df_result = pd.DataFrame(result_col)
+                        result_dict[cols[i]] = pred; result_dict[cols[i]+"_pred_prob"] = value
+                    df_result = pd.DataFrame(result_dict)
                 elif int(exp)==3:
                     feature = G.model(data)
                     result = G.fc_vas(feature).detach().cpu().numpy().squeeze()
