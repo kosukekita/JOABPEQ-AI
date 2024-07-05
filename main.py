@@ -238,7 +238,7 @@ def main():
                             tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
                         result_dict[cols[i]] = pred
-                        result_dict[cols[i]+"_pred_prob"] = value
+                        #result_dict[cols[i]+"_pred_prob"] = value
                     df_result = pd.DataFrame(result_dict, index=[0])
                 elif int(exp)==2:
                     result_dict = {}
@@ -254,7 +254,7 @@ def main():
                             tmp = f"{cols[i]} : {pred}_{value}"
                         result.append(tmp)
                         result_dict[cols[i]] = pred
-                        result_dict[cols[i]+"_pred_prob"] = value
+                        #result_dict[cols[i]+"_pred_prob"] = value
                     df_result = pd.DataFrame(result_dict, index=[0])
                 elif int(exp)==3:
                     feature = G.model(data)
