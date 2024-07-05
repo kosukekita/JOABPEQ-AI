@@ -239,7 +239,7 @@ def main():
                         result.append(tmp)
                         result_dict[cols[i]] = pred
                         result_dict[cols[i]+"_pred_prob"] = value
-                    df_result = pd.DataFrame(result_dict)
+                    df_result = pd.DataFrame(result_dict, index=[0])
                 elif int(exp)==2:
                     result_dict = {}
                     for i in range(14, 25):
@@ -255,11 +255,11 @@ def main():
                         result.append(tmp)
                         result_dict[cols[i]] = pred
                         result_dict[cols[i]+"_pred_prob"] = value
-                    df_result = pd.DataFrame(result_dict)
+                    df_result = pd.DataFrame(result_dict, index=[0])
                 elif int(exp)==3:
                     feature = G.model(data)
                     result = G.fc_vas(feature).detach().cpu().numpy().squeeze()
-                    df_result = pd.DataFrame(result)
+                    df_result = pd.DataFrame(result, index=[0])
                     df_result.columns = ["VAS_1", "VAS_2", "VAS_3"]
             # 元の画像に長方形と名前が書かれているので、それを表示
             #st.image(image, use_column_width=True)
